@@ -41,13 +41,13 @@ while 1:
             train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
             train.cardio()
             record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
-        else:
+        if entrainement == 1:
             print("Matériel : Vous avez besoin d'un tapis de sol.\n")
-            tps_rope = int(input("Choisissez le temps des exos en seconde : "))
             print("Choisissez le niveau d'intensité : \n")
             level = int(input(f"1-Débutant: {choix_diff2(1)}\n2-Intermédiaire: {choix_diff2(2)}\n>"))
             serie = int(input("Combien de serie(s) souhaitez-vous faire ? : 1,2,3...? : "))
             print(f"\nBienvenue {participant} l'entrainement va commencer.\n")
+            tps_rope = 0
             train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
             train.gain()
             record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)

@@ -20,7 +20,7 @@ def histo_part(participant):
                 print(f"\nLe {resultat[2]} vous avez fait {resultat[4]} série(s) de Gainage"
                       f" au niveau {resultat[6]}.")
                 print("Récapitulatif des exercies effectués :")
-                liste_exos = choix_diff2(resultat[6])
-                for exos in liste_exos:
-                    print(f"{exos} pendant {resultat[5]}s x{resultat[4]} série(s)")
+                liste_exos2 = choix_diff2(resultat[6])
+                for exos, nbre in liste_exos2.items():
+                    print(f"{exos} pendant {nbre}s x{resultat[4]} série(s)")
 

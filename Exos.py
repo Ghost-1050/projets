@@ -15,12 +15,12 @@ def choix_diff(level):
 
 def choix_diff2(level):
     if level == 1:
-        liste_exos2 = ["La Planche", "Superman", "La Planche Latérale Gauche",
-                       "La Planche Latérale Droite", "La Planche Dos"]
+        liste_exos2 = {"La Planche": 60, "Superman": 60, "La Planche Latérale Gauche": 45,
+                       "La Planche Latérale Droite": 45, "La Planche Dos": 60}
     if level == 2:
-        liste_exos2 = ["La Planche", "La Planche Latérale Gauche avec torsion",
-                       "La Planche Latérale Droite avec torsion",
-                       "La Planche 1 bras 1 jambe levée gauche",
-                       "La Planche 1 bras 1 jambe levée droit"]
+        liste_exos2 = {"La Planche": 60, "La Planche Latérale Gauche avec torsion": 30,
+                       "La Planche Latérale Droite avec torsion": 30,
+                       "La Planche 1 bras 1 jambe levée gauche": 30,
+                       "La Planche 1 bras 1 jambe levée droit": 30}
     return liste_exos2
 
