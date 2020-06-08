@@ -21,7 +21,7 @@ participant = participant.capitalize()
 
 while 1:
     choix_menu = int(input(f"\n- Faites votre choix {participant} - \n 1- Faire un entrainement\n "
-                          "2- Consulter mes derniers entrainement \n"
+                          "2- Consulter mes derniers entrainements \n"
                           " 3- Consulter ma courbe de poids\n 4- Quitter \n> "))
     if choix_menu == 1:
         poids = float(input("Veuillez rentrer votre poids avec 1 chiffre apres le . : "))
