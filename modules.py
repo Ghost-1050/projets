@@ -91,6 +91,8 @@ class Training():
                       tps_exos = self.tps_rope
                       print("\r", "Il vous reste {}s de corde à sauter.".format(self.tps_rope), end="")
                       time.sleep(1)
+                      if int(tps_exos) == 2*int(self.tps_rope):
+                          print("Half Time")
 
                       if self.tps_rope == 0:
                           print("\n")
@@ -135,25 +137,21 @@ class Training():
     def gain(self):
         debut = time.time()
         nbre_serie = self.nbre_serie
-        tps_rope = self.tps_rope
-        print(f"Vous avez choisi de faire {self.nbre_serie} série(s) de l'entrainement Gainage au niveau d'intensité {self.level} "
-              f"chaque exercice devra etre effectué pendant {self.tps_rope}s.\n")
+        print(f"Vous avez choisi de faire {self.nbre_serie} série(s) de l'entrainement Gainage au niveau d'intensité {self.level}")
         input("Appuyer sur la touche Enter pour commencer l'entrainement")
         while self.nbre_serie > 0:
             liste_exos2 = choix_diff2(self.level)
-            tps_exos = self.tps_rope
-            for exos2 in liste_exos2:
+            for exos2, nbre in liste_exos2.items():
                 fin_inter = time.time()
                 chrono_inter = fin_inter - debut
                 temps_inter = strftime('%M minutes et %S secondes', gmtime(chrono_inter))
-                print(f"\n--> Vous devez faire : {exos2} pendant {tps_exos}s vous avez commencé l'entrainement depuis {temps_inter}.")
+                print(f"\n--> Vous devez faire : {exos2} pendant {nbre}s vous avez commencé l'entrainement depuis {temps_inter}.")
                 print("\nMettez vous en place le compte à rebours va commencer dans 5 secondes.")
                 time.sleep(5)
-                while self.tps_rope > 0:
-                      self.tps_rope -= 1
-                      print("\r","Il vous reste {}s.".format(self.tps_rope), end="")
+                while nbre > 0:
+                      nbre -= 1
+                      print("\r","Il vous reste {}s.".format(nbre), end="")
                       time.sleep(1)
-                self.tps_rope += tps_rope
             print("\n")
             self.nbre_serie -= 1
             if self.nbre_serie > 0:
