@@ -43,7 +43,6 @@ class Training():
                   print("\r","Il vous reste {}s de corde à sauter.".format(self.tps_rope), end="")
                   time.sleep(1)
                   if self.tps_rope == 0:
-
                       print("\n")
                       print(
                           "                ------------ --------    ********   ------------        --------   ---    ---  ------------ -----------    ")
@@ -94,9 +93,6 @@ class Training():
                       tps_exos = self.tps_rope
                       print("\r", "Il vous reste {}s de corde à sauter.".format(self.tps_rope), end="")
                       time.sleep(1)
-                      if int(tps_exos) == 2*int(self.tps_rope):
-                          print("Half Time")
-
                       if self.tps_rope == 0:
                           print("\n")
                           print(
@@ -155,6 +151,8 @@ class Training():
                       nbre -= 1
                       print("\r","Il vous reste {}s.".format(nbre), end="")
                       time.sleep(1)
+                      if nbre == 0:
+                        son_chrono()
             print("\n")
             self.nbre_serie -= 1
             if self.nbre_serie > 0:
