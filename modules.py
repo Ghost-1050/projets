@@ -1,6 +1,7 @@
 from time import *
 import time
 from Exos import *
+from Ziq import *
 
 
 class Training():
@@ -42,6 +43,7 @@ class Training():
                   print("\r","Il vous reste {}s de corde à sauter.".format(self.tps_rope), end="")
                   time.sleep(1)
                   if self.tps_rope == 0:
+
                       print("\n")
                       print(
                           "                ------------ --------    ********   ------------        --------   ---    ---  ------------ -----------    ")
@@ -59,6 +61,7 @@ class Training():
                           "                    ----     --------  ***  **  *** ------------       ----------    ------    ------------ ----   ----     ")
                       print(
                           "                    ****     ********  ---      --- ************        ********      ****     ************ ****    ****    ")
+                      son_chrono()
             liste_exos = choix_diff(self.level)
             for exos, nbre in liste_exos.items():
                 fin_inter = time.time()
@@ -112,7 +115,7 @@ class Training():
                               "                    ----     --------  ***  **  *** ------------       ----------    ------    ------------ ----   ----     ")
                           print(
                               "                    ****     ********  ---      --- ************        ********      ****     ************ ****    ****    ")
-
+                          son_chrono()
             self.tps_rope += tps_rope
             print("\n")
             self.nbre_serie -= 1
