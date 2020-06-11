@@ -13,7 +13,7 @@ print("\__    ___/___________  |__| ____ |__| ____    _____")
 print("  |    |  \_  __ \__  \ |  |/    \|  |/    \  / ___ \ ")
 print("  |    |   |  | \// __ \|  |   |  \  |   |  \/ /_/  >")
 print("  |____|   |__|  /____  /__|___|  /__|___|  /\___  /")
-print("                      \/        \/        \//_____/   by Ghost v2.1")
+print("                      \/        \/        \//_____/   by Ghost v2.2")
 print("\n")
 
 participant = input("Veuillez rentrer votre nom : ")
