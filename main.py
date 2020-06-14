@@ -4,6 +4,8 @@ from datetime import date
 from Historique import histo_part
 from GraphPoids import graph_poids
 from Record_sql import record_base
+from Stat import stat_poids
+
 
 today = date.today()
 d1 = today.strftime("%d/%m/%Y")
@@ -18,16 +20,21 @@ print("\n")
 
 participant = input("Veuillez rentrer votre nom : ")
 participant = participant.capitalize()
-
+poids = float(input("Veuillez rentrer votre poids avec 1 chiffre apres le . : "))
+gras = float(input("Veuillez rentrer votre taux de graisse avec 1 chiffre apres le . : "))
+difference = (stat_poids(participant) - poids)
+if difference < 0:
+    print(f"{participant} depuis que vous vous entrainez vous avez pris {difference}kgs")
+if difference > 0:
+    print(f"{participant} depuis que vous vous entrainez vous avez perdu {difference}kgs")
 while 1:
     choix_menu = int(input(f"\n- Faites votre choix {participant} - \n 1- Faire un entrainement\n "
                           "2- Consulter mes derniers entrainements \n"
                           " 3- Consulter ma courbe de poids\n 4- Quitter \n> "))
     if choix_menu == 1:
-        poids = float(input("Veuillez rentrer votre poids avec 1 chiffre apres le . : "))
-        gras = float(input("Veuillez rentrer votre taux de graisse avec 1 chiffre apres le . : "))
+
         entrainement = int(input(f"\nQuel type d'entrainement souhaitez vous faire {participant} ?\n 1- Gainage"
-                                 "\n 2- Cardio Renforcement musculaire\n> "
+                                 "\n 2- Cardio Renforcement musculaire\n 3- Renforcement musculaire\n> "
                                  ""))
         print(f"\nEchauffez vous bien {participant} l'entrainement va commencer.\n")
         if entrainement == 2:
@@ -50,6 +57,15 @@ while 1:
             tps_rope = 0
             train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
             train.gain()
+            record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
+        if entrainement == 3:
+            print("Matériel : Vous avez besoin d'un tapis de sol, d'une barre de traction et d'un tretix.\n")
+            tps_rope = int(input("Choisissez le temps de repos entre les exercices : "))
+            print("Choisissez l'intensité : \n")
+            level = int(input(f"1-Débutant: {choix_diff3(1)}\n2-Intermédiaire: {choix_diff3(2)}\n"))
+            serie = int(input("Combien de serie(s) souhaitez-vous faire ? : 1,2,3...? : "))
+            train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
+            train.renfor()
             record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
     if choix_menu ==2:
         histo_part(participant)

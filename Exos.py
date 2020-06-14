@@ -24,3 +24,13 @@ def choix_diff2(level):
                        "La Planche 1 bras 1 jambe levée droit": 30}
     return liste_exos2
 
+
+def choix_diff3(level):
+    if level == 1:
+         liste_exos3 = {"Dips": 5, "Pompes pieds surélevés": 10,
+                       "Pompes": 10, "Tractions": 10}
+    if level == 2:
+        liste_exos3 = {"Dips": 10, "Pompes pieds surélevés": 15,
+                      "Pompes": 15, "Tractions": 15}
+
+    return liste_exos3

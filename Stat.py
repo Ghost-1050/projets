@@ -1,12 +1,19 @@
 import sqlite3
 from Exos import *
 
-def histo_part(participant):
+def stat_poids(participant):
         connection = sqlite3.connect("entrainements.db")
         cursor = connection.cursor()
-        cursor.execute("SELECT * FROM training WHERE user_name = ? ORDER BY id_entrainement DESC LIMIT 3", [participant])
+        cursor.execute("SELECT * FROM training WHERE user_name = ? ORDER BY id_entrainement ASC LIMIT 1", [participant])
         resultats = cursor.fetchall()
-        print(f"Bonjour {participant} voici vos derniers entrainements :")
+        for resultat in resultats:
+                return resultat[7]
+
+def stat_entrainement(participant):
+        connection = sqlite3.connect("entrainements.db")
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM training WHERE user_name = ? ORDER BY id_entrainement ASC LIMIT 1", [participant])
+        resultats = cursor.fetchall()
         for resultat in resultats:
             if resultat[3]==2:
                 print(f"\nLe {resultat[2]} vous avez fait {resultat[4]} série(s) de Cardio renforcement musculaire"
@@ -30,4 +37,3 @@ def histo_part(participant):
                 liste_exos3 = choix_diff3(resultat[6])
                 for exos, nbre in liste_exos3.items():
                     print(f"{nbre * resultat[4]} {exos}")
-
