@@ -133,6 +133,8 @@ class Training():
                   self.repos_serie -= 1
                   print("\r","Il vous reste {}s de repos avant la prochaine série.".format(self.repos_serie), end="")
                   time.sleep(1)
+            son_chrono()
+
 
     def gain(self):
         debut = time.time()
@@ -152,6 +154,7 @@ class Training():
                       nbre -= 1
                       print("\r","Il vous reste {}s.".format(nbre), end="")
                       time.sleep(1)
+                son_chrono()
             print("\n")
             self.nbre_serie -= 1
             if self.nbre_serie > 0:
@@ -166,6 +169,7 @@ class Training():
                   self.repos_serie -= 1
                   print("\r","Il vous reste {}s de repos avant la prochaine série.".format(self.repos_serie), end="")
                   time.sleep(1)
+            son_chrono()
     def renfor(self):
         debut = time.time()
         nbre_serie = self.nbre_serie
@@ -187,6 +191,7 @@ class Training():
                       tps_exos -= 1
                       print("\r", "Il vous reste {}s de repos.".format(tps_exos), end="")
                       time.sleep(1)
+                son_chrono()
             print("\n")
             self.nbre_serie -= 1
             if self.nbre_serie > 0:
@@ -206,6 +211,7 @@ class Training():
                   self.repos_serie -= 1
                   print("\r","Il vous reste {}s de repos avant la prochaine série.".format(self.repos_serie), end="")
                   time.sleep(1)
+            son_chrono()
 
 
 
