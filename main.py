@@ -15,18 +15,21 @@ print("\__    ___/___________  |__| ____ |__| ____    _____")
 print("  |    |  \_  __ \__  \ |  |/    \|  |/    \  / ___ \ ")
 print("  |    |   |  | \// __ \|  |   |  \  |   |  \/ /_/  >")
 print("  |____|   |__|  /____  /__|___|  /__|___|  /\___  /")
-print("                      \/        \/        \//_____/   by Ghost v2.2")
+print("                      \/        \/        \//_____/   by Ghost v2.5")
 print("\n")
 
 participant = input("Veuillez rentrer votre nom : ")
 participant = participant.capitalize()
 poids = float(input("Veuillez rentrer votre poids avec 1 chiffre apres le . : "))
 gras = float(input("Veuillez rentrer votre taux de graisse avec 1 chiffre apres le . : "))
-difference = (stat_poids(participant) - poids)
-if difference < 0:
-    print(f"{participant} depuis que vous vous entrainez vous avez pris {difference}kgs")
-if difference > 0:
-    print(f"{participant} depuis que vous vous entrainez vous avez perdu {difference}kgs")
+if stat_poids(participant) is not None:
+    difference = (stat_poids(participant) - poids)
+    if difference < 0:
+            print(f"{participant} depuis que vous vous entrainez vous avez pris {difference}kgs")
+    if difference > 0:
+            print(f"{participant} depuis que vous vous entrainez vous avez perdu {difference}kgs")
+else:
+    print(f"\nBienvenue {participant} c'est la première fois que vous utilisez l'application.")
 while 1:
     choix_menu = int(input(f"\n- Faites votre choix {participant} - \n 1- Faire un entrainement\n "
                           "2- Consulter mes derniers entrainements \n"
