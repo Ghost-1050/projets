@@ -212,7 +212,9 @@ class Training():
                   time.sleep(1)
             son_chrono()
     def FBI(self):
-        print(f"Vous avez choisi de faire l'entrainement FBI avec la musique Thunderstruck d'AC/DC")
+        input(f"Vous avez choisi de faire l'entrainement FBI avec la musique Thunderstruck d'AC/DC"
+              f" appuyez sur Enter pour commencer, vous avez 5s pour vous mettre en place avant le debut de la chanson. ")
+        time.sleep(5)
         fbi_ACDC()
 
 

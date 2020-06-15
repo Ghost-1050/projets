@@ -77,6 +77,7 @@ while 1:
             tps_rope = 0
             train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
             train.FBI()
+            record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
 
     if choix_menu ==2:
         print("Depuis que vous avez commencé a vous entrainer :")

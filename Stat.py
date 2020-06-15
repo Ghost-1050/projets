@@ -51,5 +51,9 @@ def histo_part(participant):
             liste_exos3 = choix_diff3(resultat[6])
             for exos, nbre in liste_exos3.items():
                 print(f"{nbre * resultat[4]} {exos}")
+        if resultat[3] == 4:
+            print(f"\nLe {resultat[2]} vous avez fait le Challenge FBI 'AC/DC'")
+
+
 
 
