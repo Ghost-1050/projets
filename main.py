@@ -1,11 +1,11 @@
 from modules import *
 from Exos import *
 from datetime import date
-from Historique import histo_part
 from GraphPoids import graph_poids
 from Record_sql import record_base
 from Stat import stat_poids
 from Stat import stat_entrainement
+from Stat import histo_part
 
 
 today = date.today()
