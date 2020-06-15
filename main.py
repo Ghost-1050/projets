@@ -36,7 +36,7 @@ while 1:
     if choix_menu == 1:
 
         entrainement = int(input(f"\nQuel type d'entrainement souhaitez vous faire {participant} ?\n 1- Gainage"
-                                 "\n 2- Cardio Renforcement musculaire\n 3- Renforcement musculaire\n> "
+                                 "\n 2- Cardio Renforcement musculaire\n 3- Renforcement musculaire \n 4- Challenge FBI 'AC/DC'\n> "
                                  ""))
         print(f"\nEchauffez vous bien {participant} l'entrainement va commencer.\n")
         if entrainement == 1:
@@ -69,6 +69,15 @@ while 1:
             train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
             train.renfor()
             record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
+        if entrainement == 4:
+            print("L'entrainement commence en planche bras tendu, vous devez faire une pompe"
+                  " à chaque fois que vous entendez le mot 'Thunder' ou 'Thunderstruck' pendant la chanson.\n")
+            serie = 0
+            level = 0
+            tps_rope = 0
+            train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
+            train.FBI()
+
     if choix_menu ==2:
         print("Depuis que vous avez commencé a vous entrainer :")
         stat_entrainement(participant)

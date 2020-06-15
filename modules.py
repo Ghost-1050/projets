@@ -4,7 +4,6 @@ from Exos import *
 from Ziq import *
 
 
-
 class Training():
     def __init__(self,nbre_serie,tps_rope,level,participant,repos_serie=180):
         self.nbre_serie = nbre_serie
@@ -212,6 +211,13 @@ class Training():
                   print("\r","Il vous reste {}s de repos avant la prochaine série.".format(self.repos_serie), end="")
                   time.sleep(1)
             son_chrono()
+    def FBI(self):
+        print(f"Vous avez choisi de faire l'entrainement FBI avec la musique Thunderstruck d'AC/DC")
+        fbi_ACDC()
+
+
+
+
 
 
 
