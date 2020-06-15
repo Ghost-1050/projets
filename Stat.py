@@ -16,11 +16,13 @@ def stat_entrainement(participant):
         resultats = cursor.fetchall()
         for resultat in resultats:
             if resultat[0]==2:
-                 print(f"Vous avez fait {resultat[1]} entrainements de Cardio renforcement musculaire.")
+                 print(f"Vous avez fait {resultat[1]} entrainement(s) de Cardio renforcement musculaire.")
             if resultat[0]==1:
-                print(f"Vous avez fait {resultat[1]} entrainements de Gainage.")
+                print(f"Vous avez fait {resultat[1]} entrainement(s) de Gainage.")
             if resultat[0]==3:
-                print(f"Vous avez fait {resultat[1]} entrainements de Renforcement musculaire.")
+                print(f"Vous avez fait {resultat[1]} entrainement(s) de Renforcement musculaire.")
+            if resultat[0]==4:
+                print(f"Vous avez fait {resultat[1]} entrainement(s) du Challenge FBI.")
 
 def histo_part(participant):
     connection = sqlite3.connect("entrainements.db")
