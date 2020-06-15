@@ -20,6 +20,6 @@ def stat_entrainement(participant):
             if resultat[0]==1:
                 print(f"Vous avez fait {resultat[1]} entrainements de Gainage.")
             if resultat[0]==3:
-                print(f"Vous avez fait {resultat[1]} entrainements de renforcement musculaire.")
+                print(f"Vous avez fait {resultat[1]} entrainements de Renforcement musculaire.")
 
 
