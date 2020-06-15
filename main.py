@@ -21,9 +21,14 @@ print("\n")
 
 participant = input("Veuillez rentrer votre nom : ")
 participant = participant.capitalize()
-poids = float(input("Veuillez rentrer votre poids avec 1 chiffre apres le . : "))
-gras = float(input("Veuillez rentrer votre taux de graisse avec 1 chiffre apres le . : "))
-
+rec_poids = input("Souhaitez vous avoir un suivi de votre poids ? oui/non\n > ")
+if rec_poids == "oui":
+    poids = float(input("Veuillez rentrer votre poids avec 1 chiffre apres le . : "))
+    gras = float(input("Veuillez rentrer votre taux de graisse avec 1 chiffre apres le . : "))
+else:
+    poids = 0
+    gras = 0
+    print("Vous pourrez changer d'avis au prochain entrainement")
 while 1:
     choix_menu = int(input(f"\n- Faites votre choix {participant} - \n 1- Faire un entrainement\n "
                           "2- Consulter mes statistiques \n"
