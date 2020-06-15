@@ -6,7 +6,7 @@ def histo_part(participant):
         cursor = connection.cursor()
         cursor.execute("SELECT * FROM training WHERE user_name = ? ORDER BY id_entrainement DESC LIMIT 3", [participant])
         resultats = cursor.fetchall()
-        print(f"Bonjour {participant} voici vos derniers entrainements :")
+        print(f"\nVoici vos trois derniers entrainements :")
         for resultat in resultats:
             if resultat[3]==2:
                 print(f"\nLe {resultat[2]} vous avez fait {resultat[4]} série(s) de Cardio renforcement musculaire"

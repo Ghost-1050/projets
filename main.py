@@ -5,6 +5,7 @@ from Historique import histo_part
 from GraphPoids import graph_poids
 from Record_sql import record_base
 from Stat import stat_poids
+from Stat import stat_entrainement
 
 
 today = date.today()
@@ -22,17 +23,10 @@ participant = input("Veuillez rentrer votre nom : ")
 participant = participant.capitalize()
 poids = float(input("Veuillez rentrer votre poids avec 1 chiffre apres le . : "))
 gras = float(input("Veuillez rentrer votre taux de graisse avec 1 chiffre apres le . : "))
-if stat_poids(participant) is not None:
-    difference = (stat_poids(participant) - poids)
-    if difference < 0:
-            print(f"{participant} depuis que vous vous entrainez vous avez pris {difference}kgs")
-    if difference > 0:
-            print(f"{participant} depuis que vous vous entrainez vous avez perdu {difference}kgs")
-else:
-    print(f"\nBienvenue {participant} c'est la première fois que vous utilisez l'application.")
+
 while 1:
     choix_menu = int(input(f"\n- Faites votre choix {participant} - \n 1- Faire un entrainement\n "
-                          "2- Consulter mes derniers entrainements \n"
+                          "2- Consulter mes statistiques \n"
                           " 3- Consulter ma courbe de poids\n 4- Quitter \n> "))
     if choix_menu == 1:
 
@@ -71,7 +65,18 @@ while 1:
             train.renfor()
             record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
     if choix_menu ==2:
-        histo_part(participant)
+        print("Depuis que vous avez commencé a vous entrainer :")
+        stat_entrainement(participant)
+        if stat_poids(participant) is not None:
+            histo_part(participant)
+            difference = (stat_poids(participant) - poids)
+            if difference < 0:
+                print(f"\nDepuis que vous vous entrainez vous avez pris {difference}kgs")
+            if difference > 0:
+                print(f"\nDepuis que vous vous entrainez vous avez perdu {difference}kgs")
+        else:
+            print(f"\nBienvenue {participant} c'est la première fois que vous utilisez l'application.")
+
     if choix_menu ==3:
         graph_poids(participant)
     if choix_menu ==4:
