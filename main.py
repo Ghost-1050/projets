@@ -75,7 +75,8 @@ while 1:
             if difference > 0:
                 print(f"\nDepuis que vous vous entrainez vous avez perdu {difference}kgs")
         else:
-            print(f"\nBienvenue {participant} c'est la première fois que vous utilisez l'application.")
+            print(f"\nBienvenue {participant} c'est la première fois que vous utilisez l'application"
+                  f" revenez voir vos stats qand vous aurez fait quelques entrainements.")
 
     if choix_menu ==3:
         graph_poids(participant)
