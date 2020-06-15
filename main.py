@@ -85,9 +85,9 @@ while 1:
         if stat_poids(participant) is not None:
             histo_part(participant)
             difference = (stat_poids(participant) - poids)
-            if difference < 0:
+            if difference < 0 and poids > 0:
                 print(f"\nDepuis que vous vous entrainez vous avez pris {difference}kgs")
-            if difference > 0:
+            if difference > 0 and poids >0:
                 print(f"\nDepuis que vous vous entrainez vous avez perdu {difference}kgs")
         else:
             print(f"\nBienvenue {participant} c'est la première fois que vous utilisez l'application"
