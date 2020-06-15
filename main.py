@@ -34,6 +34,16 @@ while 1:
                                  "\n 2- Cardio Renforcement musculaire\n 3- Renforcement musculaire\n> "
                                  ""))
         print(f"\nEchauffez vous bien {participant} l'entrainement va commencer.\n")
+        if entrainement == 1:
+            print("Matériel : Vous avez besoin d'un tapis de sol.\n")
+            print("Choisissez le niveau d'intensité : \n")
+            level = int(input(f"1-Débutant: {choix_diff2(1)}\n2-Intermédiaire: {choix_diff2(2)}\n>"))
+            serie = int(input("Combien de serie(s) souhaitez-vous faire ? : 1,2,3...? : "))
+            print(f"\nBienvenue {participant} l'entrainement va commencer.\n")
+            tps_rope = 0
+            train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
+            train.gain()
+            record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
         if entrainement == 2:
             print("Matériel : Vous avez besoin d'un tapis de sol, d'une corde à sauter et d'une barre de traction.\n")
             tps_rope = int(input("Choisissez le temps de corde à sauter en seconde : "))
@@ -44,16 +54,6 @@ while 1:
             serie = int(input("Combien de serie(s) souhaitez-vous faire ? : 1,2,3...? : "))
             train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
             train.cardio()
-            record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
-        if entrainement == 1:
-            print("Matériel : Vous avez besoin d'un tapis de sol.\n")
-            print("Choisissez le niveau d'intensité : \n")
-            level = int(input(f"1-Débutant: {choix_diff2(1)}\n2-Intermédiaire: {choix_diff2(2)}\n>"))
-            serie = int(input("Combien de serie(s) souhaitez-vous faire ? : 1,2,3...? : "))
-            print(f"\nBienvenue {participant} l'entrainement va commencer.\n")
-            tps_rope = 0
-            train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
-            train.gain()
             record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
         if entrainement == 3:
             print("Matériel : Vous avez besoin d'un tapis de sol, d'une barre de traction et d'un tretix.\n")
@@ -77,7 +77,6 @@ while 1:
         else:
             print(f"\nBienvenue {participant} c'est la première fois que vous utilisez l'application"
                   f" revenez voir vos stats qand vous aurez fait quelques entrainements.")
-
     if choix_menu ==3:
         graph_poids(participant)
     if choix_menu ==4:
