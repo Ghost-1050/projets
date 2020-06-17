@@ -5,7 +5,7 @@ from Ziq import *
 
 
 class Training():
-    def __init__(self,nbre_serie,tps_rope,level,participant,repos_serie=5):
+    def __init__(self,nbre_serie,tps_rope,level,participant,repos_serie=180):
         self.nbre_serie = nbre_serie
         self.tps_rope = tps_rope
         self.repos_serie = repos_serie
