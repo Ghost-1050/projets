@@ -5,7 +5,7 @@ from Ziq import *
 
 
 class Training():
-    def __init__(self,nbre_serie,tps_rope,level,participant,repos_serie=18):
+    def __init__(self,nbre_serie,tps_rope,level,participant,repos_serie=5):
         self.nbre_serie = nbre_serie
         self.tps_rope = tps_rope
         self.repos_serie = repos_serie
@@ -403,7 +403,23 @@ class Training():
             if serie_exo4 > 0:
                 print(f"Il vous reste {serie_exo4} série(s) avant la fin de l'exercice.")
 
-
+        fin = time.time()
+        chrono = fin - debut
+        temps = strftime('%M minutes et %S secondes', gmtime(chrono))
+        print(f"Félicitations {self.participant}, l'entrainement a duré {temps}.")
+        print("Récapitulatif des exercies effectués :")
+        liste_exos3 = choix_diff3(1)
+        for exos, nbre in liste_exos3.items():
+            print(f"{nbre * self.nbre_serie} {exos}")
+        liste_exos3 = choix_diff3(2)
+        for exos, nbre in liste_exos3.items():
+            print(f"{nbre * self.nbre_serie} {exos}")
+        liste_exos3 = choix_diff3(3)
+        for exos, nbre in liste_exos3.items():
+            print(f"{nbre * self.nbre_serie} {exos}")
+        liste_exos3 = choix_diff3(4)
+        for exos, nbre in liste_exos3.items():
+            print(f"{nbre * self.nbre_serie} {exos}")
 
 
 
