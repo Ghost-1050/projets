@@ -5,7 +5,7 @@ from Ziq import *
 
 
 class Training():
-    def __init__(self,nbre_serie,tps_rope,level,participant,repos_serie=180):
+    def __init__(self,nbre_serie,tps_rope,level,participant,repos_serie=18):
         self.nbre_serie = nbre_serie
         self.tps_rope = tps_rope
         self.repos_serie = repos_serie
@@ -169,7 +169,8 @@ class Training():
                   print("\r","Il vous reste {}s de repos avant la prochaine série.".format(self.repos_serie), end="")
                   time.sleep(1)
             son_chrono()
-    def renfor(self):
+
+    def renfor2(self):
         debut = time.time()
         nbre_serie = self.nbre_serie
         tps_rope = self.tps_rope
@@ -177,7 +178,8 @@ class Training():
               f" entre les exercices au niveau d'intensité {self.level}.\n")
 
         while self.nbre_serie > 0:
-            liste_exos3 = choix_diff3(self.level)
+
+            liste_exos3 = choix_diff3(1)
             for exos, nbre in liste_exos3.items():
                 fin_inter = time.time()
                 chrono_inter = fin_inter - debut
@@ -295,6 +297,111 @@ class Training():
             if serie_exo3 > 0:
                 print(f"Il vous reste {serie_exo3} série(s) avant la fin de l'exercice.")
 
+    def renfor(self):
+        debut = time.time()
+        print(f"Vous avez choisi de faire {self.nbre_serie} série(s) avec {self.tps_rope}s de repos\n")
+
+        serie_exo1 = self.nbre_serie
+        while serie_exo1 > 0:
+            liste_exos3 = choix_diff3(1)
+            for exos, nbre in liste_exos3.items():
+                fin_inter = time.time()
+                chrono_inter = fin_inter - debut
+                temps_inter = strftime('%M minutes et %S secondes', gmtime(chrono_inter))
+                print("\n")
+                print(f"--> Vous devez faire : {nbre} {exos} le chrono est à {temps_inter}")
+                input("Appuyer sur Enter quand vous avez terminé l'exercice")
+                tps_exos = self.tps_rope
+                while tps_exos > 0 and serie_exo1 > 1:
+                    tps_exos -= 1
+                    print("\r", "Il vous reste {}s de repos.".format(tps_exos), end="")
+                    time.sleep(1)
+                son_chrono()
+            print("\n")
+            serie_exo1 -= 1
+            if serie_exo1 > 0:
+                print(f"Il vous reste {serie_exo1} série(s) avant la fin de l'exercice.")
+        repos_serie_exo1 = self.repos_serie
+        while repos_serie_exo1 > 0:
+            repos_serie_exo1 -= 1
+            print("\r", "Il vous reste {}s de repos avant la prochaine série.".format(repos_serie_exo1), end="")
+            time.sleep(1)
+        son_chrono()
+
+        serie_exo2 = self.nbre_serie
+        while serie_exo2 > 0:
+            liste_exos3 = choix_diff3(2)
+            for exos, nbre in liste_exos3.items():
+                fin_inter = time.time()
+                chrono_inter = fin_inter - debut
+                temps_inter = strftime('%M minutes et %S secondes', gmtime(chrono_inter))
+                print("\n")
+                print(f"--> Vous devez faire : {nbre} {exos} le chrono est à {temps_inter}")
+                input("Appuyer sur Enter quand vous avez terminé l'exercice")
+                tps_exos = self.tps_rope
+                while tps_exos > 0 and serie_exo2 > 1:
+                    tps_exos -= 1
+                    print("\r", "Il vous reste {}s de repos.".format(tps_exos), end="")
+                    time.sleep(1)
+                son_chrono()
+            print("\n")
+            serie_exo2 -= 1
+            if serie_exo2 > 0:
+                print(f"Il vous reste {serie_exo2} série(s) avant la fin de l'exercice.")
+        repos_serie_exo2 = self.repos_serie
+        while repos_serie_exo2 > 0:
+            repos_serie_exo2 -= 1
+            print("\r", "Il vous reste {}s de repos avant la prochaine série.".format(repos_serie_exo2), end="")
+            time.sleep(1)
+        son_chrono()
+
+        serie_exo3 = self.nbre_serie
+        while serie_exo3 > 0:
+            liste_exos3 = choix_diff3(3)
+            for exos, nbre in liste_exos3.items():
+                fin_inter = time.time()
+                chrono_inter = fin_inter - debut
+                temps_inter = strftime('%M minutes et %S secondes', gmtime(chrono_inter))
+                print("\n")
+                print(f"--> Vous devez faire : {nbre} {exos} le chrono est à {temps_inter}")
+                input("Appuyer sur Enter quand vous avez terminé l'exercice")
+                tps_exos = self.tps_rope
+                while tps_exos > 0 and serie_exo2 > 1:
+                    tps_exos -= 1
+                    print("\r", "Il vous reste {}s de repos.".format(tps_exos), end="")
+                    time.sleep(1)
+                son_chrono()
+            print("\n")
+            serie_exo3 -= 1
+            if serie_exo3 > 0:
+                print(f"Il vous reste {serie_exo3} série(s) avant la fin de l'exercice.")
+        repos_serie_exo3 = self.repos_serie
+        while repos_serie_exo3 > 0:
+            repos_serie_exo3 -= 1
+            print("\r", "Il vous reste {}s de repos avant la prochaine série.".format(repos_serie_exo3), end="")
+            time.sleep(1)
+        son_chrono()
+
+        serie_exo4 = self.nbre_serie
+        while serie_exo4 > 0 and serie_exo4 > 0:
+            liste_exos3 = choix_diff3(4)
+            for exos, nbre in liste_exos3.items():
+                fin_inter = time.time()
+                chrono_inter = fin_inter - debut
+                temps_inter = strftime('%M minutes et %S secondes', gmtime(chrono_inter))
+                print("\n")
+                print(f"--> Vous devez faire : {nbre} {exos} le chrono est à {temps_inter}")
+                input("Appuyer sur Enter quand vous avez terminé l'exercice")
+                tps_exos = self.tps_rope
+                while tps_exos > 0 and serie_exo4 > 1:
+                    tps_exos -= 1
+                    print("\r", "Il vous reste {}s de repos.".format(tps_exos), end="")
+                    time.sleep(1)
+                son_chrono()
+            print("\n")
+            serie_exo4 -= 1
+            if serie_exo4 > 0:
+                print(f"Il vous reste {serie_exo4} série(s) avant la fin de l'exercice.")
 
 
 

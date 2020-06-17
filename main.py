@@ -64,8 +64,7 @@ while 1:
         if entrainement == 3:
             print("Matériel : Vous avez besoin d'un tapis de sol, d'une barre de traction et d'un tretix.\n")
             tps_rope = int(input("Choisissez le temps de repos entre les exercices : "))
-            print("Choisissez l'intensité : \n")
-            level = int(input(f"1-Débutant: {choix_diff3(1)}\n2-Intermédiaire: {choix_diff3(2)}\n"))
+            level = 0
             serie = int(input("Combien de serie(s) souhaitez-vous faire ? : 1,2,3...? : "))
             train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
             train.renfor()
