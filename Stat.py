@@ -23,6 +23,8 @@ def stat_entrainement(participant):
                 print(f"Vous avez fait {resultat[1]} entrainement(s) de Renforcement musculaire.")
             if resultat[0]==4:
                 print(f"Vous avez fait {resultat[1]} entrainement(s) du Challenge FBI.")
+            if resultat[0]==5:
+                print(f"Vous avez fait {resultat[1]} entrainement(s) de Travail Force à la poutre.")
 
 def histo_part(participant):
     connection = sqlite3.connect("entrainements.db")
@@ -55,6 +57,18 @@ def histo_part(participant):
                 print(f"{nbre * resultat[4]} {exos}")
         if resultat[3] == 4:
             print(f"\nLe {resultat[2]} vous avez fait le Challenge FBI 'AC/DC'")
+        if resultat[3] == 5:
+            print(f"\nLe {resultat[2]} vous avez fait un entrainement de Travail Force à la poutre")
+            print("Récapitulatif des exercies effectués :")
+            liste_exos4 = choix_diff4(1)
+            for exos, nbre in liste_exos4.items():
+                print(f"{nbre * resultat[4]} {exos}")
+            liste_exos4 = choix_diff4(2)
+            for exos, nbre in liste_exos4.items():
+                print(f"{nbre * resultat[4]} {exos}")
+            liste_exos4 = choix_diff4(3)
+            for exos, nbre in liste_exos4.items():
+                print(f"{nbre * resultat[4]} {exos}")
 
 
 

@@ -36,7 +36,8 @@ while 1:
     if choix_menu == 1:
 
         entrainement = int(input(f"\nQuel type d'entrainement souhaitez vous faire {participant} ?\n 1- Gainage"
-                                 "\n 2- Cardio Renforcement musculaire\n 3- Renforcement musculaire \n 4- Challenge FBI 'AC/DC'\n> "
+                                 "\n 2- Cardio Renforcement musculaire\n"
+                                 " 3- Renforcement musculaire \n 4- Challenge FBI 'AC/DC'\n 5- Travail Force à la poutre\n> "
                                  ""))
         print(f"\nEchauffez vous bien {participant} l'entrainement va commencer.\n")
         if entrainement == 1:
@@ -72,12 +73,22 @@ while 1:
         if entrainement == 4:
             print("L'entrainement commence en planche bras tendu, vous devez faire une pompe"
                   " à chaque fois que vous entendez le mot 'Thunder' ou 'Thunderstruck' pendant la chanson.\n")
-            serie = 0
+            serie = int(input("Combien de serie(s) souhaitez-vous faire ? : 1,2,3...? : "))
             level = 0
             tps_rope = 0
             train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
             train.FBI()
             record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
+        if entrainement == 5:
+            print("Vous avez choisi de faire un entrainement Force à la poutre.\n")
+            print("Matériel : Vous avez besoin d'une barre de traction et d'un élastique et d'un gilet lesté.\n")
+            tps_rope = int(input("Choisissez le temps de repos entre les exercices : "))
+            serie = int(input("Combien de serie(s) souhaitez-vous faire ? : 1,2,3...? : "))
+            level = 0
+            train = Training(nbre_serie=serie, tps_rope=tps_rope, level=level, participant=participant)
+            train.Poutre_Force()
+            record_base(participant, d1, entrainement, serie, tps_rope, level, poids, gras)
+
 
     if choix_menu ==2:
         print("Depuis que vous avez commencé a vous entrainer :")
