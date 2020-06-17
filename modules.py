@@ -170,49 +170,6 @@ class Training():
                   time.sleep(1)
             son_chrono()
 
-    def renfor2(self):
-        debut = time.time()
-        nbre_serie = self.nbre_serie
-        tps_rope = self.tps_rope
-        print(f"Vous avez choisi de faire {self.nbre_serie} série(s) avec {self.tps_rope}s de repos"
-              f" entre les exercices au niveau d'intensité {self.level}.\n")
-
-        while self.nbre_serie > 0:
-
-            liste_exos3 = choix_diff3(1)
-            for exos, nbre in liste_exos3.items():
-                fin_inter = time.time()
-                chrono_inter = fin_inter - debut
-                temps_inter = strftime('%M minutes et %S secondes', gmtime(chrono_inter))
-                print("\n")
-                print(f"--> Vous devez faire : {nbre} {exos} le chrono est à {temps_inter}")
-                input("Appuyez sur la touche Enter quand vous avez terminé l'exercice pour passer à la suite du programme.\n")
-                tps_exos = self.tps_rope
-                while tps_exos > 0:
-                      tps_exos -= 1
-                      print("\r", "Il vous reste {}s de repos.".format(tps_exos), end="")
-                      time.sleep(1)
-                son_chrono()
-            print("\n")
-            self.nbre_serie -= 1
-            if self.nbre_serie > 0:
-                print(f"Il vous reste {self.nbre_serie} série(s) avant la fin de l'entrainement.")
-            else:
-                fin = time.time()
-                chrono = fin - debut
-                temps = strftime('%M minutes et %S secondes', gmtime(chrono))
-                print(f"Félicitations {self.participant}, l'entrainement a duré {temps}.")
-                print("Vous avez effectué : ")
-                for exos, nbre in liste_exos3.items():
-                    self.nbre_serie += nbre_serie
-                    print(f"{nbre*self.nbre_serie} {exos}")
-                    self.nbre_serie = 0
-
-            while self.repos_serie > 0 and self.nbre_serie > 0:
-                  self.repos_serie -= 1
-                  print("\r","Il vous reste {}s de repos avant la prochaine série.".format(self.repos_serie), end="")
-                  time.sleep(1)
-            son_chrono()
     def FBI(self):
         input(f"Vous avez choisi de faire l'entrainement FBI avec la musique Thunderstruck d'AC/DC"
               f" appuyez sur Enter pour commencer, vous avez 5s pour vous mettre en place avant le debut de la chanson. ")
