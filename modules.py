@@ -3,7 +3,6 @@ import time
 from Exos import *
 from Ziq import *
 
-
 class Training():
     def __init__(self,nbre_serie,tps_rope,level,participant,repos_serie=180):
         self.nbre_serie = nbre_serie
