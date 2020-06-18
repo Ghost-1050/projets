@@ -15,6 +15,7 @@ class Training():
         debut = time.time()
         nbre_serie = self.nbre_serie
         tps_rope = self.tps_rope
+        repos_serie = self.repos_serie
         print(f"Vous avez choisi de faire {self.nbre_serie} série(s) avec {self.tps_rope}s de corde à sauter"
               f" entre les exercices au niveau d'intensité {self.level}.\n")
         while self.nbre_serie > 0:
@@ -89,7 +90,6 @@ class Training():
                 time.sleep(5)
                 while self.tps_rope > 0:
                       self.tps_rope -= 1
-                      tps_exos = self.tps_rope
                       print("\r", "Il vous reste {}s de corde à sauter.".format(self.tps_rope), end="")
                       time.sleep(1)
                       if self.tps_rope == 0:
@@ -126,7 +126,7 @@ class Training():
                     self.nbre_serie += nbre_serie
                     print(f"{nbre*self.nbre_serie} {exos}")
                     self.nbre_serie = 0
-
+            self.repos_serie = repos_serie
             while self.repos_serie > 0 and self.nbre_serie > 0:
                   self.repos_serie -= 1
                   print("\r","Il vous reste {}s de repos avant la prochaine série.".format(self.repos_serie), end="")
