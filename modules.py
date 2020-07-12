@@ -5,7 +5,7 @@ from Ziq import *
 
 
 class Training():
-    def __init__(self,nbre_serie,tps_rope,level,participant,repos_serie=180):
+    def __init__(self,nbre_serie,tps_rope,level,participant,repos_serie=10):
         self.nbre_serie = nbre_serie
         self.tps_rope = tps_rope
         self.repos_serie = repos_serie
@@ -127,11 +127,11 @@ class Training():
                     self.nbre_serie += nbre_serie
                     print(f"{nbre*self.nbre_serie} {exos}")
                     self.nbre_serie = 0
-
-            while self.repos_serie > 0 and self.nbre_serie > 0:
-                  self.repos_serie -= 1
-                  print("\r","Il vous reste {}s de repos avant la prochaine série.".format(self.repos_serie), end="")
-                  time.sleep(1)
+            tps_serie = self.repos_serie
+            while tps_serie > 0 and self.nbre_serie > 0:
+                tps_serie -= 1
+                print("\r", "Il vous reste {}s de repos avant la prochaine série.".format(tps_serie), end="")
+                time.sleep(1)
             son_chrono()
 
 
@@ -163,11 +163,11 @@ class Training():
                 chrono = fin - debut
                 temps = strftime('%M minutes et %S secondes', gmtime(chrono))
                 print(f"Félicitations {self.participant}, l'entrainement a duré {temps}.")
-
-            while self.repos_serie > 0 and self.nbre_serie > 0:
-                  self.repos_serie -= 1
-                  print("\r","Il vous reste {}s de repos avant la prochaine série.".format(self.repos_serie), end="")
-                  time.sleep(1)
+            tps_serie = self.repos_serie
+            while tps_serie > 0 and self.nbre_serie > 0:
+                tps_serie -= 1
+                print("\r", "Il vous reste {}s de repos avant la prochaine série.".format(tps_serie), end="")
+                time.sleep(1)
             son_chrono()
     def renfor(self):
         debut = time.time()
@@ -205,10 +205,10 @@ class Training():
                     self.nbre_serie += nbre_serie
                     print(f"{nbre*self.nbre_serie} {exos}")
                     self.nbre_serie = 0
-
-            while self.repos_serie > 0 and self.nbre_serie > 0:
-                  self.repos_serie -= 1
-                  print("\r","Il vous reste {}s de repos avant la prochaine série.".format(self.repos_serie), end="")
+            tps_serie = self.repos_serie
+            while tps_serie > 0 and self.nbre_serie > 0:
+                  tps_serie -= 1
+                  print("\r","Il vous reste {}s de repos avant la prochaine série.".format(tps_serie), end="")
                   time.sleep(1)
             son_chrono()
     def FBI(self):
