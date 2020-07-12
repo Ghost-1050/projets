@@ -23,6 +23,8 @@ def stat_entrainement(participant):
                 print(f"Vous avez fait {resultat[1]} entrainement(s) de Renforcement musculaire.")
             if resultat[0]==4:
                 print(f"Vous avez fait {resultat[1]} entrainement(s) du Challenge FBI.")
+            if resultat[0]==5:
+                print(f"Vous avez fait {resultat[1]} entrainement(s) de Travail Force à la poutre.")
 
 def histo_part(participant):
     connection = sqlite3.connect("entrainements.db")
@@ -39,6 +41,7 @@ def histo_part(participant):
             liste_exos = choix_diff(resultat[6])
             for exos, nbre in liste_exos.items():
                 print(f"{nbre * resultat[4]} {exos}")
+
         if resultat[3] == 1:
             print(f"\nLe {resultat[2]} vous avez fait {resultat[4]} série(s) de Gainage"
                   f" au niveau {resultat[6]}.")
@@ -46,15 +49,38 @@ def histo_part(participant):
             liste_exos2 = choix_diff2(resultat[6])
             for exos, nbre in liste_exos2.items():
                 print(f"{exos} pendant {nbre}s x{resultat[4]} série(s)")
+
         if resultat[3] == 3:
-            print(f"\nLe {resultat[2]} vous avez fait {resultat[4]} série(s) de Renforcement musculaire"
-                  f" au niveau {resultat[6]}.")
+            print(f"\nLe {resultat[2]} vous avez fait un entrainement de Renforcement musculaire")
             print("Récapitulatif des exercies effectués :")
-            liste_exos3 = choix_diff3(resultat[6])
+            liste_exos3 = choix_diff3(1)
             for exos, nbre in liste_exos3.items():
                 print(f"{nbre * resultat[4]} {exos}")
+            liste_exos3 = choix_diff3(2)
+            for exos, nbre in liste_exos3.items():
+                print(f"{nbre * resultat[4]} {exos}")
+            liste_exos3 = choix_diff3(3)
+            for exos, nbre in liste_exos3.items():
+                print(f"{nbre * resultat[4]} {exos}")
+            liste_exos3 = choix_diff3(4)
+            for exos, nbre in liste_exos3.items():
+                print(f"{nbre * resultat[4]} {exos}")
+
         if resultat[3] == 4:
             print(f"\nLe {resultat[2]} vous avez fait le Challenge FBI 'AC/DC'")
+
+        if resultat[3] == 5:
+            print(f"\nLe {resultat[2]} vous avez fait un entrainement de Travail Force à la poutre")
+            print("Récapitulatif des exercies effectués :")
+            liste_exos4 = choix_diff4(1)
+            for exos, nbre in liste_exos4.items():
+                print(f"{nbre * resultat[4]} {exos}")
+            liste_exos4 = choix_diff4(2)
+            for exos, nbre in liste_exos4.items():
+                print(f"{nbre * resultat[4]} {exos}")
+            liste_exos4 = choix_diff4(3)
+            for exos, nbre in liste_exos4.items():
+                print(f"{nbre * resultat[4]} {exos}")
 
 
 

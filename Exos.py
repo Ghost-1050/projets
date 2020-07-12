@@ -27,10 +27,24 @@ def choix_diff2(level):
 
 def choix_diff3(level):
     if level == 1:
-         liste_exos3 = {"Dips": 5, "Pompes pieds surélevés": 10,
-                       "Pompes": 10, "Tractions": 10}
+        liste_exos3 = {"Dips": 5}
+
     if level == 2:
-        liste_exos3 = {"Dips": 10, "Pompes pieds surélevés": 15,
-                      "Pompes": 15, "Tractions": 15}
+        liste_exos3 = {"Pompes pieds surélevés": 10}
+
+    if level == 3:
+        liste_exos3 = {"Pompes": 10}
+
+    if level == 4:
+        liste_exos3 = {"Tractions": 10}
 
     return liste_exos3
+
+def choix_diff4(level):
+    if level == 1:
+        liste_exos4 = {"Tractions_lentes" : 10}
+    if level == 2:
+        liste_exos4 = {"Frenchies": 10}
+    if level == 3:
+        liste_exos4 = {"Tractions_négative" : 3}
+    return liste_exos4
